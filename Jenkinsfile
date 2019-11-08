@@ -1,13 +1,11 @@
 node {
     stage('SCM') {
-        git 'https://github.com/asquarezone/game-of-life.git'
+        git 'https://github.com/vkatukam/Test_project.git'
     }
     
     stage('Build & Package') {
-        withSonarQubeEnv('sonar') {
-            sh 'mvn clean package sonar:sonar'
-        }
-    }
+                   sh 'mvn clean package'
+           }
     
     stage("Quality Gate") {
         timeout(time: 1, unit: 'HOURS') {
