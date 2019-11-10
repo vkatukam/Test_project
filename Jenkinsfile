@@ -6,6 +6,9 @@ node {
     stage('Build & Package') {
                    sh 'mvn clean package'
            }
+    stage('Publish Artifacts to Nexus') {
+                   sh 'mvn clean deploy'
+           }
          
     stage('Results'){
         archive 'gameoflife-web/target/gameoflife.war'
