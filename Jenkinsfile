@@ -1,13 +1,12 @@
-node {
-    stage('SCM') {
-        git 'https://github.com/vkatukam/Test_project.git'
-    }
-    
-    stage('Build & Package') {
-                   sh 'mvn clean package'
+pipeline {
+    agent any
+        stages {
+            stage ('Build & Package') {
+                   sh 'mvn clean install package'
            }
-    stage('Publish Artifacts to Nexus') {
-                   sh 'mvn clean deploy'
+            
+           stage('Publish Artifacts to Nexus') {
+                   sh 'mvn deploy'
            }
          
     stage('Results'){
