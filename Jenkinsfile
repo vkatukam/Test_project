@@ -12,6 +12,15 @@ pipeline {
                    sh 'mvn deploy'
                }
            }
+            stage('Deploy applicaiton using K8s')
+            {
+                agent {
+                    label "master" }
+                steps {
+                    
+                     sh "kubectl apply -f kubernetes.yml" 
+                }
+            }
          
     stage('Results') {
         steps {
