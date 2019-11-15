@@ -18,7 +18,7 @@ pipeline {
                     label "master" }
                 steps {
                     
-                     sh "kubectl apply -f kubernetes.yml" 
+                     sh "kubectl apply -f kubenetes.yml" 
                 }
             }
          
