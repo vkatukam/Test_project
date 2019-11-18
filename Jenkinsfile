@@ -12,7 +12,7 @@ pipeline {
                    sh 'mvn deploy'
                }
            }
-            stage('Deploy applicaiton using K8s')
+            stage('Deploy applicatiDeploy applicaiton using K8on using K8s')
             {
                 agent {
                     label "master" }
