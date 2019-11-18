@@ -17,8 +17,9 @@ pipeline {
                 agent {
                     label "master" }
                 steps {
-                    
-                     sh "kubectl apply -f kubenetes.yml" 
+                      
+                    sh 'hostname'
+                     kubectl apply -f kubenetes.yml
                 }
             }
          
