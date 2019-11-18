@@ -19,7 +19,7 @@ pipeline {
                 steps {
                       
                     sh 'hostname'
-                     kubectl apply -f kubenetes.yml
+                    sh "kubectl apply -f kubenetes.yml"
                 }
             }
          
