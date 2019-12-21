@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent "Kubernetes_master"
         stages {
             stage ('Build & Package') {
                 steps {
@@ -15,7 +15,7 @@ pipeline {
             stage('Deploy the application using K8s')
             {
                 agent {
-                    label "master" }
+                    label "Kubernetes_master" }
                 steps {
                       
                     sh 'hostname'
