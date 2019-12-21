@@ -1,5 +1,6 @@
 pipeline {
-    agent "Kubernetes_master"
+    agent any {
+        label "Kubernetes_master" }
         stages {
             stage ('Build & Package') {
                 steps {
