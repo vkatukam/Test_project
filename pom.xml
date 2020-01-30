@@ -216,7 +216,7 @@
                 <repository>
                         <id>nexus</id>
                         <name>nexus</name>
-                        <url>http://192.168.189.135:8081/repository/maven-releases/</url>
+                        <url>http://192.168.189.246:8081/repository/maven-releases/</url>
                         <snapshots>
                                 <enabled>true</enabled>
                         </snapshots>
@@ -225,11 +225,11 @@
     <distributionManagement>
     <snapshotRepository>
       <id>nexus</id>
-      <url>http://192.168.189.135:8081/repository/maven-snapshots/</url>
+      <url>http://192.168.189.246:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus</id>
-      <url>http://192.168.189.135:8081/repository/maven-releases/</url>
+      <url>http://192.168.189.246:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
     <profiles>
