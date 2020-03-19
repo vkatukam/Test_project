@@ -8,7 +8,7 @@ pipeline {
         stages {
             stage ('Get the Artifact from Repository') {
                 steps{
-                    sh " curl -o 192.168.189.246:8081/repository/maven-public/com/wakaleo/gameoflife/gameoflife-web/$Version/*.war "
+                    sh " curl -o http://192.168.189.246:8081/repository/maven-public/com/wakaleo/gameoflife/gameoflife-web/$Version/*.war "
                 }
             }
             
