@@ -2,13 +2,13 @@ pipeline {
     agent any
       
        parameters{
-         string(name:'Version', defaultvalue: '1.x', description: 'which version you want to deploy')
+         string(name:'Version', defaultValue: '1.x', description: 'which version you want to deploy')
          }
      
         stages {
             stage ('Get the Artifact from Repository') {
                 steps{
-                    sh " echo version:$version "
+                    sh " echo version:$Version "
                 }
             }
             
