@@ -3,15 +3,23 @@ pipeline {
       
        parameters{
          string(name:'Version', defaultValue: '1.x', description: 'which version you want to deploy')
+         string(name:'artifactId', defaultValue: 'gameoflife-web', description: 'artifactId to be deployed')
+         string(name:'groupId', defaultValue: 'com.wakaleo.gameoflife', description: 'Group id to fetch the artifact from')
+      
          }
-     
+         
+     options {
+      timestamps()
+      buildDiscarder(logRotator(numToKeepStr: '10'))
+      timeout(time: 1, unit: 'HOURS')
+      }
+      
         stages {
             stage ('Get the Artifact from Repository') {
                 steps{
-                    sh " wget http://192.168.189.246:8081/repository/maven-public/com/wakaleo/gameoflife/gameoflife-web/$Version/*.war "
-                }
-            }
-            
+                echo "Getting the artifactory from repository"
+                sh 'wget.sh'
+                
                 }
          
 }
