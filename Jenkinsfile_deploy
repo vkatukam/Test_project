@@ -19,7 +19,7 @@ pipeline {
                 steps{
                 echo "Getting the artifactory from repository"
                 sh 'wget.sh'
-                
                 }
-         
-}
+            }
+         }
+ }
