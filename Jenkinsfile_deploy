@@ -18,7 +18,7 @@ pipeline {
             stage ('Get the Artifact from Repository') {
                 steps{
                 echo "Getting the artifactory from repository"
-                sh 'wget.sh'
+                sh '/wget.sh'
                 }
             }
          }
