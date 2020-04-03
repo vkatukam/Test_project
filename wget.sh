@@ -19,10 +19,10 @@ if [[ ${version} == *"SNAPSHOT"* ]]; then repo_type="snapshots"; else repo_type=
 
 if [[ $repo_type == "releases" ]]
  then
- wget --no-check-certificate "${repo}/repository/releases/${groupIdUrl}/${artifact}/${version}/${artifact}-${version}${classifier}.${type}" -O ${filename} -k
+ wget --user admin --password 341Zbojw@ --no-check-certificate "${repo}/repository/releases/${groupIdUrl}/${artifact}/${version}/${artifact}-${version}${classifier}.${type}" -O ${filename} -k
  else
-   versionTimestamped=$(wget -q -O- --no-check-certificate "${repo}/repository/snapshots/${groupIdUrl}/${artifact}/${version}/maven-metadata.xml" | grep -m 1 \ | sed -e 's/\(.*\)<\/value>/\1/' | sed -e 's/ //g')
+   versionTimestamped=$(wget --user admin --password 341Zbojw@ -q -O- --no-check-certificate "${repo}/repository/snapshots/${groupIdUrl}/${artifact}/${version}/maven-metadata.xml" | grep -m 1 \ | sed -e 's/\(.*\)<\/value>/\1/' | sed -e 's/ //g')
 
-   wget --no-check-certificate "${repo}/repository/snapshots/${groupIdUrl}/${artifact}/${version}/${artifact}-${versionTimestamped}${classifier}.${type}" -O ${filename}
+   wget --user admin --password 341Zbojw@ no-check-certificate "${repo}/repository/snapshots/${groupIdUrl}/${artifact}/${version}/${artifact}-${versionTimestamped}${classifier}.${type}" -O ${filename}
  fi
  
