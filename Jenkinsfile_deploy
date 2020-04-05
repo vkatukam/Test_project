@@ -18,6 +18,7 @@ pipeline {
             stage ('Get the Artifact from Repository') {
                 steps{
                 echo "Getting the artifactory from repository"
+                sh 'chmod +x ./script.sh'
                 sh './script.sh'
                 }
             }
