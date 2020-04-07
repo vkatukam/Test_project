@@ -21,4 +21,4 @@ versionTimestamped=$(grep -m 1 "value" "maven-metadata.xml" | awk -F ">" '{print
 
 wget --user admin --password 341Zbojw@  "${repo}/repository/maven-public/${groupIdUrl}/${artifact}/${version}/${artifact}-${versionTimestamped}.${type}" -O ${filename}
 
-rm -rf ${repo}/repository/maven-public/${groupIdUrl}/${artifact}/${version}/maven-metadata.xml
+
