@@ -11,11 +11,7 @@ pipeline {
                    sh "mvn deploy"
                }
            }
-            stage('Deploy the application using K8s'){
-                steps {
-                    sh " kubectl apply -f kubenetes.yml"
-                }
-            }
+            
         }
 }
             
