@@ -19,4 +19,6 @@ wget --user admin --password 341Zbojw@  "${repo}/repository/maven-public/${group
 
 versionTimestamped=$(grep -m 1 "value" "maven-metadata.xml" | awk -F ">" '{print $2}' | awk -F "<" '{print $1}')
 
-   wget --user admin --password 341Zbojw@  "${repo}/repository/maven-public/${groupIdUrl}/${artifact}/${version}/${artifact}-${versionTimestamped}.${type}" -O ${filename}
+wget --user admin --password 341Zbojw@  "${repo}/repository/maven-public/${groupIdUrl}/${artifact}/${version}/${artifact}-${versionTimestamped}.${type}" -O ${filename}
+
+rm -rf ${repo}/repository/maven-public/${groupIdUrl}/${artifact}/${version}/maven-metadata.xml
