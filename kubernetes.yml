@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
- name: gameoflife-app
+ name: sesapp
  namespace: default
 spec:
  replicas: 2
  selector:
   matchLabels:
-   myapp: gameoflife
+   myapp: sesapp
  template:
   metadata:
    labels:
-    myapp: gameoflife
+    myapp: sesapp
   spec:
    containers:
-   - name: gameoflife
+   - name: sesapp
      image: tomcat:9.0.31
      volumeMounts:
      - name: app
@@ -22,19 +22,19 @@ spec:
    volumes:
    - name: app
      hostPath:
-      path: /home/master/
+      path: /home/master/kubernetes
 
 ---
 
 kind: Service
 apiVersion: v1
 metadata:
- name: gameoflife
+ name: sesapp
  namespace: default
 spec:
  type: NodePort
  selector:
-  myapp: gameoflife
+  myapp: sesapp
  ports:
  - port: 8081
    targetPort: 8080
