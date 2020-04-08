@@ -23,5 +23,14 @@ pipeline {
                 sh ' rm -rf maven-metadata.xml '
                 }
             }
+            stage (' Deploy the application in K8s Cluster')
+            {
+              steps{
+              echo " Deploying the application"
+              kubernetesDeploy(
+               configs: 'kubernetes.yml',
+               kubeconfigId: 'Kubernetes_config'
+               }
+             }
          }
  }
