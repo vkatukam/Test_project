@@ -29,7 +29,7 @@ pipeline {
               echo " Deploying the application"
               kubernetesDeploy(
                configs: 'kubernetes.yml',
-               kubeconfigId: 'Kubernetes_config'
+               kubeconfigId: 'Kubernetes_config')
                }
              }
          }
