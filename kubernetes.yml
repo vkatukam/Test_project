@@ -15,7 +15,7 @@ spec:
   spec:
    containers:
    - name: gameoflife
-     image: tomcat:9.0.27
+     image: tomcat:9.0.31
      volumeMounts:
      - name: app
        mountPath: /usr/local/tomcat/webapps
