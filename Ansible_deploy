@@ -3,6 +3,7 @@ pipeline {
         stages {
             stage ('Get the artifact and transfer to destination machine') {
                 steps{
+                    sh "sudo su ansible"
                     sh "ansible-playbook ansible_test.yaml"
                 }
             }
