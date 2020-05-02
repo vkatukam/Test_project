@@ -3,8 +3,16 @@
   remote_user: ansible
 
   tasks:
-  - name: copy file to remote machine
-    copy:
-     src: /home/ansible/sample.txt
+  - name: Get the artifact from Artifactory
+    maven_artifact:
+     group_id: com.wakaleo.gameoflife
+     artifact_id: gameoflife-web
+     repository_url: 'http://192.168.189.246:8081/#browse/browse:maven-public'
+     extension: war
+     username: admin
+     password: 341Zbojw@
      dest: /home/ansible/
+     owner: ansible
+     mode: u=rw,g=r,o=r
      
+      
