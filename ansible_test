@@ -1,0 +1,10 @@
+---
+- hosts: node
+  remote_user: ansible
+
+  tasks:
+  - name: copy file to remote machine
+    copy:
+     src: /home/ansible/sample.txt
+     dest: /home/ansible/
+     
