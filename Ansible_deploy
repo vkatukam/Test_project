@@ -1,16 +1,12 @@
 pipeline {
     agent any 
         stages {
-            stage ('Build & Package') {
+            stage ('Get the artifact and transfer to destination machine') {
                 steps{
-                    sh "mvn clean install package"
+                    sh "ansible-playbook ansible.yaml"
                 }
             }
-            stage('Publish Artifacts to Nexus') {
-               steps {
-                   sh "mvn deploy"
-               }
-           }
+            
             
         }
 }
