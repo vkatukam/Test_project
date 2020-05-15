@@ -1,9 +1,7 @@
 ---
 - hosts: node
-  become: yes
-  become_method: su
-  become_user: ansible
-
+  become: true
+  
   tasks:
   - name: Get the artifact from Artifactory
     maven_artifact:
