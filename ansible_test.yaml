@@ -11,7 +11,7 @@
      extension: war
      username: admin
      password: 341Zbojw@
-     dest: /home/ansible/
+     dest: /home/ansible
      owner: ansible
      mode: u=rw,g=r,o=r
      
