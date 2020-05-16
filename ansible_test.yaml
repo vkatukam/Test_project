@@ -20,7 +20,8 @@
         
   - name: create docker custom image
     docker_image:
-     path: /home/ansible/
+     build:
+      path: /home/ansible/
      name: tomcat_gameoflife
      
   
