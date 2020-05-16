@@ -18,6 +18,11 @@
      group: ansible
      mode: u=rw,g=r,o=r
      
+  - name: install python-docker
+    yum:
+     name: python-docker
+     state: latest
+     
   - name: create docker custom image
     docker_image:
      path: /var/lib/jenkins/workspace/Ansible/deploy_test/
