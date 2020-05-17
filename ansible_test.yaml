@@ -23,7 +23,15 @@
      build:
       path: /home/ansible/
      name: tomcat_gameoflife
-     
+  
+  - name: starting container
+    docker_container:
+     name: gameoflife
+     state: started
+     ports:
+     - "8090:8080"
+     tty: true
+     detach: true
   
      
       
