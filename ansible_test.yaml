@@ -27,6 +27,7 @@
   - name: starting container
     docker_container:
      name: gameoflife
+     image: tomcat_gameoflife
      state: started
      ports:
      - "8090:8080"
