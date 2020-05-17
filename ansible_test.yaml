@@ -30,7 +30,7 @@
      image: tomcat_gameoflife
      state: started
      ports:
-     - "8090:8080"
+     - "9090:8080"
      tty: true
      detach: true
   
